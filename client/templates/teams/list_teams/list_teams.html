@@ -1,0 +1,49 @@
+<template name="ListTeams">
+  <div class="list-teams">
+      <h1>Võistkonnad</h1>
+      <table class="table table-hover">
+          <thead>
+          <tr>
+              <th>nimi</th>
+              <th>liikmeid</th>
+              <th>muuda</th>
+              <th>kustuta</th>
+          </tr>
+          </thead>
+          <tbody>
+          {{#each teams}}
+              <tr>
+                  <td>{{nimi}}</td>
+                  <td>mingi arv</td>
+                  <td><div class="team" data-id="{{_id}}"><a href="#" id="edit"><span class="glyphicon glyphicon-edit" aria-hidden="true" ></span></a></div></td>
+                  <td><span class="glyphicon glyphicon-remove-circle" aria-hidden="true" style="color:red" id="delete"></span></td>
+              </tr>
+          {{/each}}
+          </tbody>
+      </table>
+  </div>
+</template>
+<template name="teamEditModal">
+    <div class="modal fade">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Võistkonna  muutmine</h4>
+                </div>
+
+                <div class="modal-body">
+                    <label for="teamName">nimi</label>
+                    <input type="text" id="teamName" value={{team.nimi}}  />
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="save">salvesta</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">loobu</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>

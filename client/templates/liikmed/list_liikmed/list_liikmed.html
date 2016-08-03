@@ -1,0 +1,85 @@
+<template name="ListLiikmed">
+  <div class="list-liikmed">
+
+          <h1>Liikmed</h1>
+          <table class="table table-hover">
+              <thead>
+              <tr>
+                  <th>eesnimi</th>
+                  <th>perenimi</th>
+                  <th>sugu</th>
+                  <th>võistkond</th>
+                  <th>muuda</th>
+                  <th>kustuta</th>
+
+
+              </tr>
+              </thead>
+              <tbody>
+              {{#each liikmed}}
+                  <tr>
+                      <td>{{enimi}}</td>
+                      <td>{{pnimi}}</td>
+                      <td>{{sugu}}</td>
+                      <td>{{team}}</td>
+                      <td><a data-toggle="modal" data-target="#edit-item-modal"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></td>
+                  <!--    <td>{{#linkTo route='editLiige'}}<span class="glyphicon glyphicon-edit" aria-hidden="true" id="edit"></span>{{/linkTo}}</td>-->
+                      <td><span class="glyphicon glyphicon-remove-circle" aria-hidden="true" style="color:red" id="delete"></span></td>
+<!--<td><a type="button" class="btn btn-sm btn-primary btn-raised" data-toggle="modal"
+       data-target="#edit-item-modal">
+    <i class="glyphicon glyphicon-pencil"></i> Edit </a></td>-->
+
+
+                  </tr>
+              {{/each}}
+              </tbody>
+          </table>
+      {{> editItemModal }}
+  </div>
+</template>
+
+<!--<template name=“editItemModal”>-->
+<template name="editItemModal">
+    <!--<div id=“edit-item-modal" class="modal">-->
+    <div id="edit-item-modal" class="modal">
+        <form>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Muuda</h4>
+                    </div>
+                    <div class="modal-body">
+                        {{#with selectedItem}}
+                            <div class="form-group">
+                                <label for="eNimi">Eesnimi </label>
+                                <input type="text" class="form-control" id="eNimi" value={{enimi}}>
+                            </div>
+                            <div class="form-group">
+                                <label for="pNimi">Nimi </label>
+                                <input type="text" class="form-control" id="pNimi" value={{pnimi}}>
+                            </div>
+                            <div class="form-group">
+                                <label for="sugu">Sugu </label>
+                                <select class="form-control" id="sugu">
+                                    <option selected="{{selectStatus 'vali'}}">vali</option>
+                                    <option value="mees" selected="{{selectStatus 'mees'}}">mees</option>
+                                    <option value="naine" selected="{{selectStatus 'naine'}}">naine</option>
+
+                                </select>
+                            </div>
+                        {{/with}}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-sm btn-primary btn-raised" id="save">
+                            <i class="fa fa-floppy-o"></i> salvesta
+                        </button>
+                        <button type="button" class="btn btn-sm btn-danger btn-raised" data-dismiss="modal"><i
+                                class="fa fa-times"></i> sule
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</template>

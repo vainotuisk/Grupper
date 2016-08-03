@@ -1,0 +1,59 @@
+<!-- <template name="EditLiige">
+  <div class="edit-liige">
+    <h1>Muuda andmeid</h1>
+      {{> quickForm collection="Liikmed" doc=this id="editLiigeForm" type="update" buttonContent="Uuenda"}}
+      {{#quickRemoveButton collection="Liikmed" _id=this._id beforeRemove=beforeRemove class="btn btn-danger"}}kustuta{{/quickRemoveButton}}
+  </div>
+</template>
+-->
+
+
+<template name="EditLiige">
+<div class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title">Muuda/kustuta</h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="edit-liige">
+                    <form>
+                        <div class="form-group">
+                            <label for="eNimi">Eesnimi </label>
+                            <input type="text" class="form-control" id="eNimi" value={{this.enimi}}>
+                        </div>
+                        <div class="form-group">
+                            <label for="pNimi">Nimi </label>
+                            <input type="text" class="form-control" id="pNimi" >
+                        </div>
+                        <div class="form-group">
+                            <label for="sugu">Sugu </label>
+                            <select class="form-control" id="sugu">
+                                <option selected>vali</option>
+                                <option value="m">mees</option>
+                                <option value="n">naine</option>
+
+                            </select>
+                        </div>
+
+
+
+                    </form>
+
+
+
+                <!--{{> quickForm collection="Liikmed" doc=this id="editLiigeForm" type="update" buttonContent="Uuenda"}}-->
+                {{#quickRemoveButton collection="Liikmed" _id=this._id beforeRemove=beforeRemove class="btn btn-danger"}}kustuta{{/quickRemoveButton}}
+                    </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Sulge</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+</template>

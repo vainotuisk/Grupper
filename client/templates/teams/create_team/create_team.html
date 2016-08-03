@@ -1,0 +1,38 @@
+
+
+<template name="CreateTeam">
+    <div class="create-team">
+        <h1>Lisa uus võistkond</h1>
+        {{> quickForm collection="Teams" id="insertTeamsForm" type="insert" buttonContent="Lisa"}}
+    </div>
+</template>
+<template name="createTeamsModal">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Lisa uus võistkond</h4>
+                </div>
+
+                <div class="modal-body">
+                    <!--{{> quickForm collection="Teams" id="insertTeamsForm" type="insert" buttonContent="Lisa"}}-->
+                    {{#autoForm collection="Teams" id="insertTeamsForm" type="insert"}}
+                        <fieldset>
+
+                            {{> afQuickField name='nimi'}}
+                            {{> afQuickField name='liikmed'}}
+
+                        </fieldset>
+                        <button type="submit" class="btn btn-primary " id="lisabutton">Lisa</button>
+                    {{/autoForm}}
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Sulge</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>

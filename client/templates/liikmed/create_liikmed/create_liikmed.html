@@ -1,0 +1,37 @@
+<template name="CreateLiikmed">
+  <div class="create-liikmed">
+    <h1>Lisa uus liige</h1>
+      {{> quickForm collection="Liikmed" id="insertLiikmedForm" type="insert" buttonContent="Lisa"}}
+  </div>
+</template>
+<template name="createModal">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Lisa uus liige</h4>
+                </div>
+
+                <div class="modal-body">
+                    <!--{{> quickForm collection="Liikmed" id="insertLiikmedForm" type="insert" buttonContent="Lisa"}}-->
+                    {{#autoForm collection="Liikmed" id="insertLiikmedForm" type="insert"}}
+                        <fieldset>
+
+                            {{> afQuickField name='enimi'}}
+                            {{> afQuickField name='pnimi'}}
+                            {{> afQuickField name='sugu' firstOption="(vali)"}}
+
+                        </fieldset>
+                        <button type="submit" class="btn btn-primary " id="lisabutton">Lisa</button>
+                    {{/autoForm}}
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Sulge</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>
