@@ -3,7 +3,6 @@
 /*****************************************************************************/
 Template.createTeamsModal.events({
     'click #lisabutton': function(e) {
-        console.log('vajutasid küll');
     //    e.preventDefault();
         Modal.hide('createTeamsModal');
     }

@@ -5,9 +5,27 @@ Template.ListTeams.events({
     'click #delete': function(e) {
         e.preventDefault();
 
-        Meteor.call('deleteTeam', this, function(error, result) {
+        /*Meteor.call('deleteTeam', this, function(error, result) {
             if (error) {
                 alert(error);
+            }
+        });*/
+        var seier = this
+        BootstrapModalPrompt.prompt({
+            title: "Oled kindel?",
+            content: "Kas kustutada võistkond?",
+            btnDismissText: "loobu",
+        }, function(result) {
+            if (result) {
+                Meteor.call('deleteTeam', seier, function(error, result) {
+                    if (error) {
+                        alert(error);
+                    }
+                });
+            }
+            else {
+                // User did not confirm, do nothing.
+
             }
         });
     },
