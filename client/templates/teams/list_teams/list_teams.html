@@ -5,6 +5,7 @@
           <thead>
           <tr>
               <th>nimi</th>
+              <th>kirjeldus</th>
               <th>liikmeid</th>
               <th>muuda</th>
               <th>kustuta</th>
@@ -14,6 +15,7 @@
           {{#each teams}}
               <tr>
                   <td>{{nimi}}</td>
+                  <td>{{kirjeldus}}</td>
                   <td>mingi arv</td>
                   <td><div class="team" data-id="{{_id}}"><a href="#" id="edit"><span class="glyphicon glyphicon-edit" aria-hidden="true" ></span></a></div></td>
                   <td><span class="glyphicon glyphicon-remove-circle" aria-hidden="true" style="color:red" id="delete"></span></td>
@@ -33,9 +35,14 @@
                 </div>
 
                 <div class="modal-body">
+                    <div class="form-group">
                     <label for="teamName">nimi</label>
-                    <input type="text" id="teamName" value={{team.nimi}}  />
-
+                    <input type="text" id="teamName" class="form-control" value={{team.nimi}}  />
+</div>
+                    <div class="form-group">
+                        <label for="teamKirjeldus">kirjeldus</label>
+                        <input type="text" id="teamKirjeldus" class="form-control" value={{team.kirjeldus}}  />
+                    </div>
                 </div>
 
                 <div class="modal-footer">

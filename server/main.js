@@ -13,7 +13,8 @@ if (Teams.find().count() === 0) {
 
     });
     Teams.insert({
-        nimi: "Kossa"
+        nimi: "Kossa",
+        kirjeldus: "Kossa on hea team"
 
     });
 }

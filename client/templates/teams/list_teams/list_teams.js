@@ -61,7 +61,8 @@ Template.teamEditModal.events({
         });*/
         var teamId = Session.get('selectedTeamId');
         var team = {
-            nimi: $('#teamName').val()
+            nimi: $('#teamName').val(),
+            kirjeldus: $('#teamKirjeldus').val()
         }
 
         if (!teamId) {
