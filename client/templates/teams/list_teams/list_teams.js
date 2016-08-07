@@ -36,6 +36,15 @@ Template.ListTeams.events({
         team = $(e.target).closest('.team')
         teamId = team.attr('data-id')
         ModalHelper.openModalFor(teamId);
+    },
+    "click table tbody tr": function(e, t){
+        // Select or deselect and item by clicking on the table row
+        //    if(!Session.get("selectedItemId")){
+
+        Session.set("selectedItemId", this._id);
+        //  } else {
+        //      Session.set("selectedItemId", null);
+        //  }
     }
 });
 
@@ -127,3 +136,14 @@ ModalHelper.openModalFor = function(teamId) {
 
     Modal.show('teamEditModal');
 }
+
+Template.teamInfoModal.helpers({
+    selectedItem: function(){
+        console.log("sessioon:", Teams.findOne({_id: Session.get("selectedItemId")}));
+        return Teams.findOne({_id: Session.get("selectedItemId")});
+    }
+});
+
+Template.teamInfoModal.helpers({
+
+});

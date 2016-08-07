@@ -14,7 +14,7 @@
           <tbody>
           {{#each teams}}
               <tr>
-                  <td>{{nimi}}</td>
+                  <td><a data-toggle="modal" data-target="#team-info-modal" id="info">{{nimi}}</a></td>
                   <td>{{kirjeldus}}</td>
                   <td>mingi arv</td>
                   <td><div class="team" data-id="{{_id}}"><a href="#" id="edit"><span class="glyphicon glyphicon-edit" aria-hidden="true" ></span></a></div></td>
@@ -23,6 +23,7 @@
           {{/each}}
           </tbody>
       </table>
+      {{> teamInfoModal }}
   </div>
 </template>
 <template name="teamEditModal">
@@ -52,5 +53,52 @@
 
             </div>
         </div>
+    </div>
+</template>
+<template name="teamInfoModal">
+
+    <div id="team-info-modal" class="modal">
+
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Võiskonna info</h4>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-hover">
+                            <thead>
+                            </thead>
+                            <tbody>
+                            {{#with selectedItem}}
+                                <tr>
+                                    <td width="30%"><strong>nimi</strong></td>
+                                    <td width="70%">{{nimi}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td width="30%"><strong>kirjeldus</strong></td>
+                                    <td width="70%">{{kirjeldus}}</td>
+                                </tr>
+
+                            {{/with}}
+                            </tbody>
+                        </table>
+
+
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-sm btn-primary btn-raised" id="save">
+                            <i class="fa fa-floppy-o"></i> salvesta
+                        </button>
+                        <button type="button" class="btn btn-sm btn-danger btn-raised" data-dismiss="modal"><i
+                                class="fa fa-times"></i> sule
+                        </button>
+                    </div>
+                </div>
+            </div>
+
     </div>
 </template>
