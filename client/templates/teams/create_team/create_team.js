@@ -3,7 +3,7 @@
 /*****************************************************************************/
 Template.createTeamsModal.events({
     'click #lisabutton': function(e) {
-    //    e.preventDefault();
+        e.preventDefault();
         Modal.hide('createTeamsModal');
     }
 });
