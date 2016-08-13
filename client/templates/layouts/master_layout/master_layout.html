@@ -14,10 +14,14 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li>{{#linkTo route="home"}}Algus{{/linkTo}}</li>
                     <li>{{#linkTo route="liikmedList"}}Liikmed{{/linkTo}}</li>
-                    <li>{{#linkTo route="createLiikmed"}}Lisa uus liige{{/linkTo}}</li>
+                    {{#if currentUser}}
+                        <li>{{#linkTo route="createLiikmed"}}Lisa uus liige{{/linkTo}}</li>
+                    {{/if}}
                     <li>{{#linkTo route="teamsList"}}Võistkonnad{{/linkTo}}</li>
-                    <li>{{#linkTo route="createTeams"}}Lisa uus võistkond{{/linkTo}}</li>
-                    <li class="nav navbar-nav navbar-right">{{> loginButtons}}</li>
+                    {{#if currentUser}}
+                        <li>{{#linkTo route="createTeams"}}Lisa uus võistkond{{/linkTo}}</li>
+                        {{/if}}
+                            <li class="nav navbar-nav navbar-right">{{> loginButtons}}</li>
                 </ul>
             </div>
         </div>

@@ -32,7 +32,7 @@ if (Liikmed.find().count() === 0) {
         enimi: "Siim",
         pnimi: "Kinnas",
         sugu: "mees",
-        team: "tessa"
+        team: ["tessa","essa"]
     });
     Liikmed.insert({
         enimi: "Enn",
@@ -43,6 +43,6 @@ if (Liikmed.find().count() === 0) {
         enimi: "Vaike",
         pnimi: "Vaher",
         sugu: "naine",
-        team: "essa"
+        team: ["essa"]
     });
 }

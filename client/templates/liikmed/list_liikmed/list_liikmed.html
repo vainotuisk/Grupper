@@ -9,9 +9,10 @@
                   <th>perenimi</th>
                   <th>sugu</th>
                   <th>võistkond</th>
+{{#if currentUser}}
                   <th>muuda</th>
                   <th>kustuta</th>
-
+{{/if}}
 
               </tr>
               </thead>
@@ -22,9 +23,11 @@
                       <td>{{pnimi}}</td>
                       <td>{{sugu}}</td>
                       <td>{{team}}</td>
+                  {{#if currentUser}}
                       <td><a data-toggle="modal" data-target="#edit-item-modal"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></td>
                   <!--    <td>{{#linkTo route='editLiige'}}<span class="glyphicon glyphicon-edit" aria-hidden="true" id="edit"></span>{{/linkTo}}</td>-->
                       <td><span class="glyphicon glyphicon-remove-circle" aria-hidden="true" style="color:red" id="delete"></span></td>
+                      {{/if}}
 <!--<td><a type="button" class="btn btn-sm btn-primary btn-raised" data-toggle="modal"
        data-target="#edit-item-modal">
     <i class="glyphicon glyphicon-pencil"></i> Edit </a></td>-->
