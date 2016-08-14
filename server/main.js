@@ -7,21 +7,21 @@ if (Teams.find().count() === 0) {
     Teams.insert({
         nimi: "Essa",
         liikmed: ["esimene"],
-        createdBy: "anonymous"
+
 
     });
     Teams.insert({
         nimi: "Tessa",
         kirjeldus: "tessa kirjeldus",
         liikmed: ["esimene","teine","kolmaa"],
-        createdBy: "anonymous"
+
 
     });
     Teams.insert({
         nimi: "Kossa",
         kirjeldus: "Kossa on hea team",
         liikmed: ["esimene","teine"],
-        createdBy: "anonymous"
+
     });
 }
 
@@ -29,23 +29,27 @@ if (Liikmed.find().count() === 0) {
     Liikmed.insert({
         enimi: "Peep",
         pnimi: "Cat",
-        sugu: "mees"
+        sugu: "mees",
+
     });
     Liikmed.insert({
         enimi: "Siim",
         pnimi: "Kinnas",
         sugu: "mees",
-        team: ["tessa","essa"]
+        team: ["tessa","essa"],
+
     });
     Liikmed.insert({
         enimi: "Enn",
         pnimi: "Kask",
-        sugu: "mees"
+        sugu: "mees",
+        createdBy: "anonymous"
     });
     Liikmed.insert({
         enimi: "Vaike",
         pnimi: "Vaher",
         sugu: "naine",
-        team: ["essa"]
+        team: ["essa"],
+
     });
 }
