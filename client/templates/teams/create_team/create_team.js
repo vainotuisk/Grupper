@@ -2,8 +2,8 @@
 /* CreateTeam: Event Handlers */
 /*****************************************************************************/
 Template.createTeamsModal.events({
-    'click #lisabutton': function(e) {
-        e.preventDefault();
+    'click #lisabutton2': function(e) {
+     //   e.preventDefault();
         Modal.hide('createTeamsModal');
     }
 });
@@ -11,17 +11,17 @@ Template.createTeamsModal.events({
 /*****************************************************************************/
 /* CreateTeam: Helpers */
 /*****************************************************************************/
-Template.CreateTeam.helpers({
-});
+/*Template.CreateTeam.helpers({
+});*/
 
 /*****************************************************************************/
 /* CreateTeam: Lifecycle Hooks */
 /*****************************************************************************/
-Template.CreateTeam.onCreated(function () {
+/*Template.CreateTeam.onCreated(function () {
 });
 
 Template.CreateTeam.onRendered(function () {
 });
 
 Template.CreateTeam.onDestroyed(function () {
-});
+});*/

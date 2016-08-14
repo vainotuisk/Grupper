@@ -1,11 +1,11 @@
 
 
-<template name="CreateTeam">
+<!--<template name="CreateTeam">
     <div class="create-team">
         <h1>Lisa uus võistkond</h1>
         {{> quickForm collection="Teams" id="insertTeamsForm" type="insert" buttonContent="Lisa"}}
     </div>
-</template>
+</template>-->
 <template name="createTeamsModal">
     <div class="modal fade">
         <div class="modal-dialog">
@@ -22,9 +22,10 @@
 
                             {{> afQuickField name='nimi'}}
                             {{> afQuickField name='kirjeldus'}}
+                            <!--{{> afQuickField name='liikmed'}} -->
 
                         </fieldset>
-                        <button type="submit" class="btn btn-primary " id="lisabutton">Lisa</button>
+                        <button type="submit" class="btn btn-primary " id="lisabutton2">Lisa</button>
                     {{/autoForm}}
                 </div>
 
