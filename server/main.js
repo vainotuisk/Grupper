@@ -6,19 +6,22 @@ Meteor.startup(() => {
 if (Teams.find().count() === 0) {
     Teams.insert({
         nimi: "Essa",
-        liikmed: ["esimene"]
+        liikmed: ["esimene"],
+        createdBy: "anonymous"
 
     });
     Teams.insert({
         nimi: "Tessa",
         kirjeldus: "tessa kirjeldus",
-        liikmed: ["esimene","teine","kolmaa"]
+        liikmed: ["esimene","teine","kolmaa"],
+        createdBy: "anonymous"
 
     });
     Teams.insert({
         nimi: "Kossa",
         kirjeldus: "Kossa on hea team",
-        liikmed: ["esimene","teine"]
+        liikmed: ["esimene","teine"],
+        createdBy: "anonymous"
     });
 }
 
