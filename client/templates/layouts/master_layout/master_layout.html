@@ -11,17 +11,21 @@
                 <a class="navbar-brand" href="#">Meteor Team Manager</a>
             </div>
             <div class="collapse navbar-collapse" id="navigationbar">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav">
                     <li>{{#linkTo route="home"}}Algus{{/linkTo}}</li>
+                    {{#if currentUser}}
                     <li>{{#linkTo route="liikmedList"}}Liikmed{{/linkTo}}</li>
-                    {{#if currentUser}}
+
                         <li>{{#linkTo route="createLiikmed"}}Lisa uus liige{{/linkTo}}</li>
-                    {{/if}}
+
                     <li>{{#linkTo route="teamsList"}}Võistkonnad{{/linkTo}}</li>
-                    {{#if currentUser}}
+
                         <li>{{#linkTo route="createTeams"}}Lisa uus võistkond{{/linkTo}}</li>
                         {{/if}}
-                            <li class="nav navbar-nav navbar-right">{{> loginButtons}}</li>
+
+                </ul>
+                <ul>
+                    <li class="nav navbar-nav navbar-right">{{> loginButtons}}</li>
                 </ul>
             </div>
         </div>

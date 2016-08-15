@@ -7,3 +7,5 @@ Meteor.methods({
     // server method logic
   }
 });
+
+

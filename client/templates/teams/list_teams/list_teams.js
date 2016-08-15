@@ -87,20 +87,23 @@ Template.teamEditModal.events({
             }
         });*/
         var teamId = Session.get('selectedTeamId');
-        var team = {
+
+        var tiim = {
             nimi: $('#teamName').val(),
-            kirjeldus: $('#teamKirjeldus').val()
+            kirjeldus: $('#teamKirjeldus').val(),
+
         }
 
         if (!teamId) {
-            Meteor.call('addTeam', team, function(error, result) {
+            Meteor.call('addTeam', tiim, function(error, result) {
                 if (error) {
                     alert(error);
                 }
             });
         } else {
-            _.extend(team, {id: teamId});
-            Meteor.call('editTeam', team, function(error, result) {
+            _.extend(tiim, {id: teamId});
+
+            Meteor.call('editTeam', tiim, function(error, result) {
                 if (error) {
                     alert(error);
                 }
